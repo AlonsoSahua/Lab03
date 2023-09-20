@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Cambio</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <script>
+        function Cambio() {
+            var valor = parseFloat(document.getElementById("monto").value);
+            var resultado = 0;
+            var Dolar = 3.70;
+            var Euro = 4.00;
+
+            if (document.getElementById("num1").checked) {
+                resultado = valor / Dolar;
+                alert("El cambio de " + valor + " Soles a Dólares es: $" + resultado.toFixed(2) + " Dolares"); 
+            } 
+            else if (document.getElementById("num2").checked) {
+                resultado = valor / Euro;
+                alert("El cambio de " + valor + " Soles a Euros es: €" + resultado.toFixed(2) + " Euros"); 
+            }
+            else {
+                alert("Seleccione una moneda y coloque un número válido");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Casa de Cambio</h3>
+    <form class="Monedas">
+        <p>Seleccionar moneda a cambiar</p>
+        <input type="radio" name="cambio" id="num1">Dólar
+        <input type="radio" name="cambio" id="num2">Euro
+        <p>Ingrese monto</p>
+        <input type="number" id="monto" min="1">
+        <p></p>
+        <button type="button" id="Cotizador" value="Cotizar" onclick="Cambio()">Cotizar</button> 
+    </form>
+</body>
+</html>
